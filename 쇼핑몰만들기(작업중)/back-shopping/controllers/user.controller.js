@@ -19,7 +19,7 @@ try{
     email,
     password,
     name,
-    level:level?level:"customer",
+    level: level ? level:"customer",
 });
 await newUser.save();
 

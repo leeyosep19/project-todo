@@ -14,6 +14,7 @@ const userSchema = Schema({                            //회원가입
     //추가 성별, 생년월일,주소 , 상세주소(필수아님)
 },
 {timestamps:true})
+
 userSchema.methods.toJSON = function(){
     const obj = this._doc;
     delete obj.password;
@@ -21,14 +22,15 @@ userSchema.methods.toJSON = function(){
     delete obj.updateAt;
     delete obj.createAt;
     return obj;
-}
+};
 
 userSchema.methods.generateToken = async function () {   //로그인 토큰
     const token = await jwt.sign(
         {_id:this.id},
         JWT_SECRET_KEY,
-        {expiresIn:"1d",}
-    );
+        {expiresIn:"1d",
+
+        });
     return token;
 };
 

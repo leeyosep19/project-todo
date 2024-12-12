@@ -1,6 +1,6 @@
 
-// const User = require("./User");
-// const Product = require("./Product");
+const User = require("./User");
+const Product = require("./Product");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const cartSchema = Schema(

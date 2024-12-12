@@ -140,7 +140,7 @@ export const loginWithEmail = createAsyncThunk(
   async ({ email, password }, {dispatch, rejectWithValue }) => {
     try {
       const response = await api.post("/auth/login", { email, password });
-      sessionStorage.setItem("/auth/login", response.data.token);
+      sessionStorage.setItem("token", response.data.token);
       dispatch(
         showToastMessage({
           message: "로그인을 성공했습니다!!",
@@ -165,10 +165,10 @@ export const loginWithGoogle = createAsyncThunk(
   "user/loginWithGoogle",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await api.get("/user/me");
-      return response.data;
+      // const response = await api.get("/user/me");
+      // return response.data;
     } catch (error) {
-      return rejectWithValue(error.error);
+      // return rejectWithValue(error.error);
     }
   }
 );
@@ -207,7 +207,7 @@ export const loginWithToken = createAsyncThunk(
   "user/loginWithToken",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await api.get("/auth/token");
+      const response = await api.get("/user/me");
       return response.data;
     } catch (error) {
       return rejectWithValue(error.error);

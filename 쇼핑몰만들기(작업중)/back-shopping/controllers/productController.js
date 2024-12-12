@@ -32,14 +32,22 @@ const product = new Product({
 console.log("createProduct ")
 await product.save();
 
-
 res.status(200).json({status:"success",product});
 
 }catch(error){
     res.status(400).json({status: "fail", error:error.message});
 }
+
 };
 
+productController.getProducts=async(req,res)=>{
+    try{
+    const products = await Product.find({});
+    res.status(200).json({status:"success", data:products});
+    }catch(error){
+        res.status(400).json({status: "fail", error:error.message});
+    }
+    };
 
 
 module.exports = productController;

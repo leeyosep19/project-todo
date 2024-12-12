@@ -1,6 +1,6 @@
 
-// const User = require("./User");
-// const Product = require("./Product");
+const User = require("./User");
+const Product = require("./Product");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const orderSchema = Schema(
@@ -13,10 +13,10 @@ const orderSchema = Schema(
        orderNum : { type:String},     
        items : [
         {
-            productId : {type:mongoose.Object, ref:Product, required:true },
-            qty : {type:Number, required:true},
-            size : {type:Number, required:true},
-            price :{type:String, required:true}
+            productId : {type:mongoose.ObjectId, ref:Product, required:true },
+            qty : {type:Number, required:true, default: 1},
+            size : {type:String, required:true},
+            price :{type:Number, required:true}
        },
     ],
     },
@@ -24,9 +24,10 @@ const orderSchema = Schema(
 );
 
 orderSchema.methods.toJSON = function(){
-    const obj = this._doc ;  
-    delete obj.updateAt;
-    return obj;
+    const obj = this._doc;
+  delete obj.__v;
+  delete obj.updatedAt;
+  return obj;
 }
 
 const Order = mongoose.model("Order",orderSchema);

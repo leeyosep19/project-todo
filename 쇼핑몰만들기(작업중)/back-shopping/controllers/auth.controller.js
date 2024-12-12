@@ -50,6 +50,7 @@ authController.authenticate = async (req, res, next) => {
         jwt.verify(token, JWT_SECRET_KEY,(error,payload)=>{
             if(error) throw new Error("invalid token");
             req.userId = payload._id;
+            
         });
 
         console.log("authenticate ok");
@@ -62,7 +63,7 @@ authController.authenticate = async (req, res, next) => {
 
 
 // 관리자 권한 체크
-authController.checkAdminPermission =async(req,res,next)=>{       //dmin 체크
+authController.checkAdminPermission =async(req,res,next)=>{       //admin 체크
     try{
         const {userId} = req;
         const user = await User.findById(userId);
