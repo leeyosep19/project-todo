@@ -14,7 +14,7 @@ import {
 
 const AdminProductPage = () => {
   const navigate = useNavigate();
-  const [query] = useSearchParams();
+  const [query,setQuery] = useSearchParams();
   const dispatch = useDispatch();
   const { productList, totalPageNum } = useSelector((state) => state.product);
   const [showDialog, setShowDialog] = useState(false);
@@ -38,11 +38,19 @@ const AdminProductPage = () => {
 
   //상품리스트 가져오기 (url쿼리 맞춰서)
   useEffect(()=>{
-    dispatch(getProductList());
-  },[]);
+    dispatch(getProductList({...searchQuery}));
+  },[query]);
 
   useEffect(() => {
     //검색어나 페이지가 바뀌면 url바꿔주기 (검색어또는 페이지가 바뀜 => url 바꿔줌=> url쿼리 읽어옴=> 이 쿼리값 맞춰서  상품리스트 가져오기)
+    if(searchQuery.name ===""){
+      delete searchQuery.name;
+    }
+    console.log("AdminProductPage 검색",searchQuery);
+    const params = new URLSearchParams(searchQuery);
+    const queryString = params.toString();
+    console.log("AdminProductPage 검색1",query);
+    navigate("?"+queryString);
   }, [searchQuery]);
 
   const deleteItem = (id) => {
@@ -51,7 +59,10 @@ const AdminProductPage = () => {
 
   const openEditForm = (product) => {
     //edit모드로 설정하고
+    setMode("edit")
     // 아이템 수정다이얼로그 열어주기
+    dispatch(setSelectedProduct(product))
+    setShowDialog(true);
   };
 
   const handleClickNewItem = () => {
@@ -64,8 +75,13 @@ const AdminProductPage = () => {
 
   const handlePageClick = ({ selected }) => {
     //  쿼리에 페이지값 바꿔주기
+    setSearchQuery({...searchQuery, page : selected + 1});
   };
 
+
+  //SearchBox 에서 검색어를 읽어온다 => 엔터를 치면 => SearchQurey 객체가 업데이트가 됨
+  //=>SearchQurey ㅡ객체 안에 아이템 기준으로 url을 새로 생성해서 호출 &name "" =>url 쿼리 읽어오기 
+  //=>url쿼리 기준으로 BackEnd에 검색조건과 함께 호출
   return (
     <div className="locate-center">
       <Container>
@@ -91,7 +107,7 @@ const AdminProductPage = () => {
           nextLabel="next >"
           onPageChange={handlePageClick}
           pageRangeDisplayed={5}
-          pageCount={100}
+          pageCount={totalPageNum}  //전체 페이지
           forcePage={searchQuery.page - 1}
           previousLabel="< previous"
           renderOnZeroPageCount={null}

@@ -7,10 +7,11 @@ export const getProductList = createAsyncThunk(
   "products/getProductList",
   async (query, { rejectWithValue }) => {
     try{
-      const response = await api.get("/product")
+      const response = await api.get("/product",{params:{...query}});
+      console.log("page",response)
       if(response.status !== 200)
         throw new Error (response.error);
-      return response.data.data;
+      return response.data;
     }catch(error){
       rejectWithValue(error.error);
     }
@@ -29,7 +30,8 @@ export const createProduct = createAsyncThunk(
       const response = await api.post("product",formData)
       if(response.status!==200) 
         throw new Error(response.error);
-      dispatch(showToastMessage({message:"상품 생성 완료",stautus:"success"}))
+      dispatch(showToastMessage({message:"상품 생성 완료",stautus:"success"}));
+      dispatch(getProductList({page:1}));  // 완료후 페이지 에 Refresh 없이 바로보이게 
       return response.data.data;
     }catch(error){
       return rejectWithValue(error.error);
@@ -44,7 +46,18 @@ export const deleteProduct = createAsyncThunk(
 
 export const editProduct = createAsyncThunk(
   "products/editProduct",
-  async ({ id, ...formData }, { dispatch, rejectWithValue }) => {}
+  async ({ id, ...formData }, { dispatch, rejectWithValue }) => {
+      try{
+        const response = await api.put(`/product/${id}`, formData)
+        if(response.status!==200)
+          throw new Error(response.error);
+        dispatch(getProductList({page:1}));
+        return response.data.data;
+        
+      }catch(error){
+        return rejectWithValue(error.error);
+      }
+  }
 );
 
 // 슬라이스 생성
@@ -89,13 +102,27 @@ const productSlice = createSlice({
     })
     .addCase(getProductList.fulfilled,(state,action)=>{
       state.loading=false;
-      state.productList =action.payload;
+      state.productList =action.payload.data;
       state.success = "";
+      state.totalPageNum=action.payload.totalPageNum;
     })
     .addCase(getProductList.rejected,(state,action)=>{
       state.loading=false;
       state.success = action.payload;
     })
+    .addCase(editProduct.pending,(state,action)=>{
+      state.loading=true;
+    })
+    .addCase(editProduct.fulfilled,(state,action)=>{
+      state.loading=false;
+      state.success = "";
+      state.success=true;
+    })
+    .addCase(editProduct.rejected,(state,action)=>{
+      state.loading=false;      
+      state.success = action.payload;
+      state.success=false;
+    });
   },
 });
 
