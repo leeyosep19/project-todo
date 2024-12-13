@@ -11,7 +11,7 @@ const userSchema = Schema({                            //회원가입
     name : {type:String, required:true},
     level : {type:String, default:"customer"} // 2types: customer, admin
 
-    //추가 성별, 생년월일,주소 , 상세주소(필수아님)
+    //추가 성별, 생년월일, 주소 , 상세주소(필수아님)
 },
 {timestamps:true})
 

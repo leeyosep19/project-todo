@@ -30,6 +30,7 @@ const CartProductCard = ({ item }) => {
                 icon={faTrash}
                 width={24}
                 onClick={() => deleteCart(item._id)}
+                
               />
             </button>
           </div>

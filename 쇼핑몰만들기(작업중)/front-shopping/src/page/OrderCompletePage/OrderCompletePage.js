@@ -21,6 +21,7 @@ const OrderCompletePage = () => {
       <img
         src="/image/greenCheck.png"
         width={100}
+       
         className="check-image"
         alt="greenCheck.png"
       />

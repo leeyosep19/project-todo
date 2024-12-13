@@ -12,6 +12,15 @@ router.post("/",
 
 router.get("/", productController.getProducts);
 
+router.get("/:id", productController.getProductById);
+
+
+router.delete( "/:id",
+    authController.authenticate,
+    authController.checkAdminPermission,
+    productController.deleteProduct
+  );
+  
 
 router.put("/:id",
     authController.authenticate,

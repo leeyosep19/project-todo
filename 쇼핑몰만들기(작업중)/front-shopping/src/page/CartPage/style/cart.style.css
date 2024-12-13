@@ -12,10 +12,17 @@
     background-color: ghostwhite;
     padding:10px;
 }
+
+
+  
+
+
 .receipt-container{
     border: 1px solid gray;
     padding: 32px 24px;
 }
+
+
 .receipt-list{
     list-style-type: none;
     padding: 0;
