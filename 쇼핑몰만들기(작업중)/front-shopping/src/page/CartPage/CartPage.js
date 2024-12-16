@@ -13,7 +13,10 @@ const CartPage = () => {
 
   useEffect(() => {
     //카트리스트 불러오기
+    dispatch(getCartList()); 
   }, []);
+
+  
 
   return (
     <Container>
@@ -31,7 +34,7 @@ const CartPage = () => {
           )}
         </Col>
         <Col xs={12} md={5}>
-          <OrderReceipt />
+          <OrderReceipt cartList = {cartList} totalPrice={totalPrice}/>
         </Col>
       </Row>
     </Container>

@@ -75,7 +75,7 @@ const Navbar = ({ user }) => {
       </div>
       {user && user.level === "admin" && (
         <Link to="/admin/product?page=1" className="link-area">
-          Admin page
+          관리자 페이지이동(Admin page)
         </Link>
       )}
       <div className="nav-header">
@@ -144,7 +144,11 @@ const Navbar = ({ user }) => {
               onKeyPress={onCheckEnter}
             />
           </div>
+          
         )}
+      </div>
+      <div className="binBox01"style={{height:'50px'}}>
+        {/* 빈공간 */}
       </div>
     </div>
   );
