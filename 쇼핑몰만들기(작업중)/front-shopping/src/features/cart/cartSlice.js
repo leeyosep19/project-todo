@@ -104,6 +104,7 @@ export const getCartQty = createAsyncThunk(
       if (response.status !== 200) throw new Error(response.error);
       return response.data.qty; // 카트의 수량 반환
     } catch (error) {
+      dispatch(showToastMessage({message: error,status:"error"}));
       return rejectWithValue(error.error);
     }
   }

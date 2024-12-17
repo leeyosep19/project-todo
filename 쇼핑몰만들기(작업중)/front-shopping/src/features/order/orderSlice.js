@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getCartQty } from "../cart/cartSlice";
 import api from "../../utils/api";
 import { showToastMessage } from "../common/uiSlice";
+import { faSnowplow } from "@fortawesome/free-solid-svg-icons";
 
 // Define initial state
 const initialState = {
@@ -16,7 +17,17 @@ const initialState = {
 // Async thunks
 export const createOrder = createAsyncThunk(
   "order/createOrder",
-  async (payload, { dispatch, rejectWithValue }) => {}
+  async (payload, { dispatch, rejectWithValue }) => {
+    try{
+      const response = await api.post("/order",payload);
+      if(response.status!==200) throw new Error(response.error);
+      dispatch(getCartQty());
+      return response.data.orderNum;
+    }catch(error){
+      dispatch(showToastMessage({message: error.error,status:"error"}));
+      return rejectWithValue(error.error);
+    }
+  }
 );
 
 export const getOrder = createAsyncThunk(
@@ -43,7 +54,21 @@ const orderSlice = createSlice({
       state.selectedOrder = action.payload;
     },
   },
-  extraReducers: (builder) => {},
+  extraReducers: (builder) => {
+    builder
+    .addCase(createOrder.pending,(state,action)=>{
+      state.loading= true;
+    })
+    .addCase(createOrder.fulfilled,(state,action)=>{
+      state.loading= false;
+      state.error ="";
+      state.orderNum=action.payload;
+    })
+    .addCase(createOrder.rejected,(state,action)=>{
+      state.loading= false;
+      state.error= action.payload;
+    });
+  },
 });
 
 export const { setSelectedOrder } = orderSlice.actions;
