@@ -133,6 +133,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { showToastMessage } from "../common/uiSlice";
 import api from "../../utils/api";
 import { initialCart } from "../cart/cartSlice";
+import { addToCart } from './../cart/cartSlice';
 
 // 이메일로 로그인
 export const loginWithEmail = createAsyncThunk(
@@ -163,12 +164,13 @@ export const loginWithEmail = createAsyncThunk(
 // 구글로 로그인
 export const loginWithGoogle = createAsyncThunk(
   "user/loginWithGoogle",
-  async (_, { rejectWithValue }) => {
+  async (token, { rejectWithValue }) => {
     try {
-      // const response = await api.get("/user/me");
-      // return response.data;
+      const response = await api.post("/auth/google",{token});
+      if(response.status !== 200) throw new Error(response.error);
+      return response.data.user;
     } catch (error) {
-      // return rejectWithValue(error.error);
+      return rejectWithValue(error.error);
     }
   }
 );
@@ -293,7 +295,21 @@ const userSlice = createSlice({
       })
       .addCase(logout.rejected, (state) => {
         state.loading = false;
-      });
+      })
+
+     .addCase(loginWithGoogle.pending,(state,action)=>{
+      state.loading = true;
+     })
+     .addCase(loginWithGoogle.fulfilled,(state,action)=>{
+      state.loading = false;
+      state.user = action.payload;
+      state.loginError = null;
+     })
+     .addCase(loginWithGoogle.rejected,(state,action)=>{
+      state.loading = false;
+      state.loginError = action.payload;
+     });
+
   },
 });
 
