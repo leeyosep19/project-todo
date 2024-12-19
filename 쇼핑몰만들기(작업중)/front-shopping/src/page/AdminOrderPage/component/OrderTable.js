@@ -35,7 +35,7 @@ const OrderTable = ({ header, data, openEditForm }) => {
 
                 <th>{currencyFormat(item.totalPrice)}</th>
                 <th>
-                  <Badge bg={badgeBg[item.status]}>{item.status}</Badge>
+                  <Badge bg={badgeBg[item.status]}>{item.status}..</Badge>
                 </th>
               </tr>
             ))

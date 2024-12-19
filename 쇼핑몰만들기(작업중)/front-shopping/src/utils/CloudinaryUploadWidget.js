@@ -42,3 +42,6 @@ class CloudinaryUploadWidget extends Component {
 }
 
 export default CloudinaryUploadWidget;
+
+
+

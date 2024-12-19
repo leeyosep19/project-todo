@@ -35,7 +35,7 @@ const PaymentPage = () => {
   console.log("shipinfo", shipInfo);
 
   useEffect(() => {
-    // 오더번호를 받으면 어디로 갈까?-----------
+    // 오더번호를 받으면 어디로 갈지-----------
     if(firstLoading){         //--------------useEffect 가 처음 호출될때 오더 성공페이지로 넘어가는걸 방지
       setFirstLoading(false);
     }else{

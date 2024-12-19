@@ -18,14 +18,13 @@ const Navbar = ({ user }) => {
   const isMobile = window.navigator.userAgent.indexOf("Mobile") !== -1;
   const [showSearchBox, setShowSearchBox] = useState(false);
   const menuList = [
-    "여성",
-    "Divided",
+    "NEW PRODUCT",    
+    "SALE ITEM",
     "남성",
-    "신생아/유아",
-    "아동",
-    "H&M HOME",
-    "Sale",
-    "지속가능성",
+    "여성",
+    "헤어용품",
+    "악세서리",
+    "기타",
   ];
   let [width, setWidth] = useState(0);
   let navigate = useNavigate();
@@ -124,7 +123,7 @@ const Navbar = ({ user }) => {
 
       <div className="nav-logo">
         <Link to="/">
-          <img width={100} src="/image/hm-logo.png" alt="hm-logo.png" />
+          <img width={180} src="/image/hm-logo.png" alt="hm-logo.png" />
         </Link>
       </div>
       <div className="nav-menu-area">

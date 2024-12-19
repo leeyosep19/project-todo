@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Modal, Button, Row, Col, Alert } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import CloudinaryUploadWidget from "../../../utils/CloudinaryUploadWidget";
-import { CATEGORY, STATUS, SIZE } from "../../../constants/product.constants";
+import { CATEGORY, STATUS, SIZE,SKU_OPTIONS } from "../../../constants/product.constants";
 import "../style/adminProduct.style.css";
 import {
   clearError,
@@ -142,6 +142,9 @@ const NewItemDialog = ({ mode, showDialog, setShowDialog }) => {
     setFormData({...formData,image:url});
   };
 
+
+
+  
   return (
     <Modal show={showDialog} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -156,7 +159,9 @@ const NewItemDialog = ({ mode, showDialog, setShowDialog }) => {
           <Alert variant="danger">{error}</Alert>
         </div>
       )}
-      <Form className="form-container" onSubmit={handleSubmit}>
+
+      
+    <Form className="form-container" onSubmit={handleSubmit}>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="sku">
             <Form.Label>Sku</Form.Label>
@@ -168,6 +173,7 @@ const NewItemDialog = ({ mode, showDialog, setShowDialog }) => {
               value={formData.sku}
             />
           </Form.Group>
+
 
           <Form.Group as={Col} controlId="name">
             <Form.Label>Name</Form.Label>
