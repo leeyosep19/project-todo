@@ -1,4 +1,4 @@
-https://bone-again-shopping.netlify.app/
+[데모] https://bone-again-shopping.netlify.app/
 
 ### 유저
 
