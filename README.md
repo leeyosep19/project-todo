@@ -3,7 +3,7 @@
 
 HISTORY
 ---
-[TOTAL](DOCUMENT/HISTORY/TOTAL) | [이요셉]() |
+[] | [이요셉]() |
 
 
 
@@ -11,7 +11,23 @@ HISTORY
 ---
 ![image](https://github.com/user-attachments/assets/ee0d0b61-3f52-4d27-b79b-0c8cad39dacc)
 
+## 사용된 기술🏛
 
+### FE
+
+-   React
+-   Redux-thunk
+
+### BE
+
+-   Nodejs
+-   Express
+-   MongoDB
+
+### Devops
+
+-   AWS beanstalk
+-   Netlify
 
 ### 유저
 
@@ -47,20 +63,7 @@ HISTORY
 -   관리자는 주문의 상태를 (준비중, 배송중, 완료, 환불) 수정할 수 있다.
 -   관리자는 주문번호로 주문을 검색할 수 있다.
 
-## 사용된 기술🏛
 
-### FE
-
--   React
--   Redux-thunk
-
-### BE
-
--   Nodejs
--   Express
--   MongoDB
-
-### Devops
-
--   AWS beanstalk
--   Netlify
+###ERD
+---
+![image](https://github.com/user-attachments/assets/ee0d0b61-3f52-4d27-b79b-0c8cad39dacc)
