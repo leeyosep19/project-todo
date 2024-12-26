@@ -5,7 +5,18 @@ HISTORY
 ---
 [작성자] | [이요셉]() |
 
+PLANS
+---
+LANGUAGE|PLAN|IMPLEMENT|DESCRIPTION|
+ |-|-|-|-|
+ |react|2024/12/04 ~ 2024|-|-|
+ |node.js|2024/12/04 ~ 2024|-|-|
 
+ MEMBERERS
+--- 
+|NAME|ROLE|DETAILS|DESCRIPTION| 
+|---|---|---|---|
+|이요셉|FN|BN|  |---|
 
 
 ## 사용된 기술🏛
