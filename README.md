@@ -27,8 +27,9 @@ HISTORY
 
 ### Devops
 -   github &nbsp;<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
--   heroku
--   Netlify
+-   heroku &nbsp;![image](https://github.com/user-attachments/assets/9c0c2a5d-28dd-4de6-923a-66202e837b15)
+-   Netlify &nbsp;![image](https://github.com/user-attachments/assets/dcf11fd1-c81c-46fb-bbc3-e9fde089a3dc)
+
 ---
 ### 유저
 
