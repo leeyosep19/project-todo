@@ -16,7 +16,7 @@ LANGUAGE|PLAN|IMPLEMENT|DESCRIPTION|
 --- 
 |NAME|ROLE|DETAILS|DESCRIPTION| 
 |---|---|---|---|
-|이요셉|FN|BN|  |---|
+|이요셉|FN/BN||  |---|
 
 
 ## 사용된 기술🏛
