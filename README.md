@@ -1,4 +1,6 @@
 ### 쇼핑몰웹 프로젝트
+![image](https://github.com/user-attachments/assets/e404722e-89a7-4b81-9092-48af0a1d18a7)
+
 [데모] https://bone-again-shopping.netlify.app/
 
 HISTORY
