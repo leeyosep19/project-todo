@@ -12,18 +12,20 @@ HISTORY
 
 ### FE
 
--   React  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
--   css  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+-   React &nbsp;<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+-   Html &nbsp;<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+-   JavaScript &nbsp;<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+-   css &nbsp;<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 -   Redux-thunk
 
 ### BE
 
--   Nodejs   <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
--   Express  <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white">
--   MongoDB <img src="https://img.shields.io/badge/mongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">
+-   Nodejs  &nbsp; <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
+-   Express &nbsp; <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white">
+-   MongoDB &nbsp;<img src="https://img.shields.io/badge/mongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">
 
 ### Devops
-
+-   github &nbsp;<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 -   heroku
 -   Netlify
 ---
