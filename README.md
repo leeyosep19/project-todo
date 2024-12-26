@@ -12,18 +12,19 @@ HISTORY
 
 ### FE
 
--   React
+-   React<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+-   css<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 -   Redux-thunk
 
 ### BE
 
--   Nodejs
--   Express
--   MongoDB
+-   Nodejs<img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
+-   Express<img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white">
+-   MongoDB<img src="https://img.shields.io/badge/mongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">
 
 ### Devops
 
--   AWS beanstalk
+-   heroku
 -   Netlify
 ---
 ### 유저
