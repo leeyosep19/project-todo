@@ -1,7 +1,13 @@
-### 쇼핑몰
+### 쇼핑몰웹 프로젝트
 [데모] https://bone-again-shopping.netlify.app/
 
+HISTORY
+---
+[TOTAL](DOCUMENT/HISTORY/TOTAL) | [이요셉]() |
 
+
+
+###ERD
 ![image](https://github.com/user-attachments/assets/ee0d0b61-3f52-4d27-b79b-0c8cad39dacc)
 
 
