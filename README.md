@@ -1,4 +1,9 @@
+### 쇼핑몰
 [데모] https://bone-again-shopping.netlify.app/
+
+
+![image](https://github.com/user-attachments/assets/37f49a96-c9b2-4b14-8cb3-03530e9bc72b)
+
 
 ### 유저
 
