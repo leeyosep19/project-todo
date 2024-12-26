@@ -7,9 +7,6 @@ HISTORY
 
 
 
-###ERD
----
-![image](https://github.com/user-attachments/assets/ee0d0b61-3f52-4d27-b79b-0c8cad39dacc)
 
 ## 사용된 기술🏛
 
@@ -28,7 +25,7 @@ HISTORY
 
 -   AWS beanstalk
 -   Netlify
-
+---
 ### 유저
 
 -   유저는 회원가입을 할 수 있다.
